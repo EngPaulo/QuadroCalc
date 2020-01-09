@@ -2,10 +2,14 @@ from tkinter import *
 
 class Quadro:
     def __init__(self):
+        self.nome = 'Novo Quadro'
         self.circuitos = []
 
     def adicionar_circuito(self, circuito):
         self.circuitos.append(circuito)
+
+    def potecia_total(self):
+        pass
 
 class Circuito:
     def __init__(self, ordem, tipo, tensao, potencia):
@@ -35,7 +39,7 @@ def novo_circuito(quadro):
         novo_tensao = tensao.get()
         novo_tipo = finalidade.get()
         novo_potencia = en_potencia.get()
-        circuito = Circuito(len(quadro.circuitos), novo_tipo, novo_tensao, novo_potencia)
+        circuito = Circuito(len(quadro.circuitos)+1, novo_tipo, novo_tensao, novo_potencia)
         quadro.adicionar_circuito(circuito)
         adicionar_circuitos(quadro.circuitos)
         novo_raiz.destroy()
